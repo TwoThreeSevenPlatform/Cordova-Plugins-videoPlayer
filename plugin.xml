@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+    id="si.fan.videoPlayer"
+    version="1.0.2">
+
+    <name>videoPlayer</name>
+
+	<description>Play Youtube Videos and MP4s in a native Video Player on Android &amp; iOS.</description>
+	
+	<author>Jack Read - Fan.si</author>
+	
+	<keywords>video,youtube,videoplayer</keywords>
+
+	<engines>
+	    <engine name="cordova" version=">=3.0.0" />
+	</engines>
+	
+	<js-module src="www/videoPlayer.js" name="YoutubeVideoPlayer">
+        <clobbers target="YoutubeVideoPlayer" />
+    </js-module>
+	
+	<platform name="android">
+		
+		<config-file target="res/xml/config.xml" parent="widget">
+			<feature name="YoutubeVideoPlayer">
+				<param name="android-package" value="si.fan.videoPlayer" />
+			</feature>
+        </config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<activity android:name="com.keyes.youtube.OpenYouTubePlayerActivity" android:screenOrientation="landscape" />
+		</config-file>
+
+		<source-file src="src/android/YoutubeVideoPlayer.java" target-dir="src/si/fan/videoPlayer"/>
+		<source-file src="src/android/openyoutubeactivity.jar" target-dir="libs"/>
+		
+	</platform>
+
+    <platform name="ios">
+	
+        <config-file target="config.xml" parent="/*">
+			<feature name="YoutubeVideoPlayer">
+				<param name="ios-package" value="YoutubeVideoPlayer" />
+			</feature>
+        </config-file>
+
+        <header-file src="src/ios/XCDYouTubeClient.h" />
+        <source-file src="src/ios/XCDYouTubeClient.m" />
+        <header-file src="src/ios/XCDYouTubeError.h" />
+        <header-file src="src/ios/XCDYouTubeKit.h" />
+        <header-file src="src/ios/XCDYouTubeOperation.h" />
+        <header-file src="src/ios/XCDYouTubePlayerScript.h" />
+        <source-file src="src/ios/XCDYouTubePlayerScript.m" />
+        <header-file src="src/ios/XCDYouTubeVideo.h" />
+        <source-file src="src/ios/XCDYouTubeVideo.m" />
+        <header-file src="src/ios/XCDYouTubeVideo+Private.h" />
+        <header-file src="src/ios/XCDYouTubeVideoOperation.h" />
+        <source-file src="src/ios/XCDYouTubeVideoOperation.m" />
+        <header-file src="src/ios/XCDYouTubeVideoPlayerViewController.h" />
+        <source-file src="src/ios/XCDYouTubeVideoPlayerViewController.m" />
+        <header-file src="src/ios/XCDYouTubeVideoWebpage.h" />
+        <source-file src="src/ios/XCDYouTubeVideoWebpage.m" />
+        <header-file src="src/ios/YoutubeVideoPlayer.h" />
+        <source-file src="src/ios/YoutubeVideoPlayer.m" />
+
+		<framework src="MediaPlayer.framework" />
+		<framework src="AVFoundation.framework" />
+        <framework src="JavaScriptCore.framework" />
+	
+    </platform>
+
+</plugin>
