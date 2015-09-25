@@ -1,6 +1,9 @@
 #Cordova YoutubeVideoPlayer Plugin
 
-**Play Youtube Videos in a native Video Player on Android &amp; iOS.**
+**Play Youtube Videos and MP4s in a native Video Player on Android &amp; iOS.**
+
+This is a fork of a plugin by Glitchbone
++ [http://github.com/Glitchbone](http://github.com/Glitchbone)
 
 iOS plugin uses **XCDYouTubeKit** by Cédric Luthi:  
 https://github.com/0xced/XCDYouTubeKit
@@ -11,21 +14,26 @@ https://code.google.com/p/android-youtube-player
 ##Installation
 
 ```sh
-cordova plugin add https://github.com/Glitchbone/CordovaYoutubeVideoPlayer.git
+cordova plugin add https://github.com/fan-si/Cordova-Plugins-videoPlayer.git
 ```
 
 ##Usage
 
-```javascript
-YoutubeVideoPlayer.openVideo('YOUTUBE_VIDEO_ID');
+YouTube Video
+```
+YoutubeVideoPlayer.openVideo('YOUTUBE_VIDEO_ID', '');
+```
+
+MP4 Video
+```
+YoutubeVideoPlayer.openVideo('', 'MP4 URL');
 ```
 
 ##Author
 
-**Adrien Glitchbone**
+**Jack Read**
 
-+ [https://twitter.com/glitchbone](https://twitter.com/glitchbone)
-+ [http://github.com/Glitchbone](http://github.com/Glitchbone)
++ [https://fan.si](https://fan.si)
 
 ##License
 
