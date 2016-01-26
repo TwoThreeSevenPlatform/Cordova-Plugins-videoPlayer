@@ -17,12 +17,12 @@
        under the License.
  */
 
-package com.bunkerpalace.YoutubVideoPlayerProject;
+package com.bunkerpalace.YoutubVideoPlayer;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
 
-public class YoutubeVideoPlayerProject extends CordovaActivity 
+public class YoutubeVideoPlayer extends CordovaActivity 
 {
     @Override
     public void onCreate(Bundle savedInstanceState)
